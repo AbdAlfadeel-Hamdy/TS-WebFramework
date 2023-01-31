@@ -1,11 +1,7 @@
 import { User } from "./models/User";
 
-const user = new User({ id: 1 });
+const user = new User({ id: 1, name: "adhem" });
 
-user.on("change", () => console.log("Changed!"));
+user.on("save", () => console.log("Saved!"));
 
-user.fetch();
-
-setTimeout(() => {
-  console.log(user.get("name"));
-}, 1000);
+user.save();

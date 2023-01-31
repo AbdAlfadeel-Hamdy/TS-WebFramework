@@ -41,4 +41,10 @@ export class User {
       .fecth(id)
       .then((response: AxiosResponse): void => this.set(response.data));
   }
+  save(): void {
+    const data = this.attributes.getAll();
+    this.sync.save(data).then((response: AxiosResponse): void => {
+      this.trigger("save");
+    });
+  }
 }
