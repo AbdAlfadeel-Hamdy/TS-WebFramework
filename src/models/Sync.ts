@@ -1,6 +1,6 @@
 import axios, { AxiosPromise } from "axios";
 
-interface hasId {
+export interface hasId {
   id?: number;
 }
 export class Sync<T extends hasId> {
