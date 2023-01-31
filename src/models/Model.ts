@@ -1,6 +1,6 @@
 import { Callback } from "./Eventing";
 import { AxiosPromise, AxiosResponse } from "axios";
-import { hasId } from "./Sync";
+import { hasId } from "./ApiSync";
 interface Events {
   on(eventName: string, callback: Callback): void;
   trigger(eventName: string): void;
