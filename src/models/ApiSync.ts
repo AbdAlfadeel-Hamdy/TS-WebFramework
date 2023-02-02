@@ -1,9 +1,9 @@
 import axios, { AxiosPromise } from "axios";
 
-export interface hasId {
+export interface HasId {
   id?: number;
 }
-export class ApiSync<T extends hasId> {
+export class ApiSync<T extends HasId> {
   constructor(public rootUrl: string) {}
   fecth(id: number): AxiosPromise {
     return axios.get(`${this.rootUrl}/${id}`);

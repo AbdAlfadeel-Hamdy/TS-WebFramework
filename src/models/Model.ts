@@ -1,6 +1,6 @@
 import { Callback } from "./Eventing";
 import { AxiosPromise, AxiosResponse } from "axios";
-import { hasId } from "./ApiSync";
+import { HasId } from "./ApiSync";
 interface Events {
   on(eventName: string, callback: Callback): void;
   trigger(eventName: string): void;
@@ -16,7 +16,7 @@ interface Sync<T> {
   fecth(id: number): AxiosPromise;
   save(data: T): AxiosPromise;
 }
-export class Model<T extends hasId> {
+export class Model<T extends HasId> {
   constructor(
     private events: Events,
     private sync: Sync<T>,
